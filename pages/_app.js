@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").then(
+      navigator.serviceWorker.register("/xpsw.js").then(
         function (registration) {
           console.log(
             "ServiceWorker registration successful with scope: ",
