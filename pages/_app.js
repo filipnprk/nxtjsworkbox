@@ -39,7 +39,6 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Script src="/testfile.js" strategy="beforeInteractive" />
       <Script id="gtm-script" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
