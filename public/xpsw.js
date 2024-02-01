@@ -1,3 +1,7 @@
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw.js"
+);
+
 var XPConfig = {
   appKey: "rbmfmak6z8FIgx9jt0CrCHs8qTNLabsP",
   backendUrl: "https://api.xtremepush.com",
