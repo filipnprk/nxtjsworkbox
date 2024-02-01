@@ -48,6 +48,7 @@ export default function App({ Component, pageProps }) {
           })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
+      <Script src="/testfile.js" strategy="afterInteractive" />
       <Component {...pageProps} />
     </>
   );
