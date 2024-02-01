@@ -7,7 +7,8 @@ export default {
       config.plugins.push(
         new InjectManifest({
           swSrc: "./public/xpsw.js", // Path to your custom service worker file
-          swDest: "service-worker.js", // Destination filename in the build output
+          swDest: "service-worker.js",
+          exclude: [/_buildManifest\.js$/, /_ssgManifest\.js$/],
         })
       );
     }
