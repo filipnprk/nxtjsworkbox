@@ -256,3 +256,5 @@ if (typeof event != "undefined") {
       reject();
     });
 }
+
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
