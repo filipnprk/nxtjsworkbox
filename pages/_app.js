@@ -18,18 +18,25 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    // Check if service workers are supported
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/xpsw.js").then(
-        function (registration) {
-          console.log(
-            "ServiceWorker registration successful with scope: ",
-            registration.scope
-          );
-        },
-        function (err) {
-          console.log("ServiceWorker registration failed: ", err);
-        }
-      );
+      // Wait for the window to load
+      window.addEventListener("load", function () {
+        // Register the service worker
+        navigator.serviceWorker.register("/service-worker.js").then(
+          function (registration) {
+            // Registration was successful
+            console.log("Service Worker registered: ", registration);
+          },
+          function (registrationError) {
+            // Registration failed
+            console.log(
+              "Service Worker registration failed: ",
+              registrationError
+            );
+          }
+        );
+      });
     }
   }, []);
 
