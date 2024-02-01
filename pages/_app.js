@@ -39,6 +39,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <Script src="/testfile.js" />
       <Script id="gtm-script" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -48,7 +49,6 @@ export default function App({ Component, pageProps }) {
           })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <Script src="/testfile.js" strategy="afterInteractive" />
       <Component {...pageProps} />
     </>
   );
