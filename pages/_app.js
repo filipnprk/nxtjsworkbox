@@ -18,25 +18,28 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    console.log("HELLO");
     // Check if service workers are supported
     if ("serviceWorker" in navigator) {
+      console.log("EXISTS");
       // Wait for the window to load
-      window.addEventListener("load", function () {
-        // Register the service worker
-        navigator.serviceWorker.register("/service-worker.js").then(
-          function (registration) {
-            // Registration was successful
-            console.log("Service Worker registered: ", registration);
-          },
-          function (registrationError) {
-            // Registration failed
-            console.log(
-              "Service Worker registration failed: ",
-              registrationError
-            );
-          }
-        );
-      });
+      // window.addEventListener("load", function () {
+      console.log("LOAD");
+      // Register the service worker
+      navigator.serviceWorker.register("/service-worker.js").then(
+        function (registration) {
+          // Registration was successful
+          console.log("Service Worker registered: ", registration);
+        },
+        function (registrationError) {
+          // Registration failed
+          console.log(
+            "Service Worker registration failed: ",
+            registrationError
+          );
+        }
+      );
+      // });
     }
   }, []);
 
